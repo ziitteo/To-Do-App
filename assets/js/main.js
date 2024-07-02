@@ -11,6 +11,7 @@ let addButton = document.getElementById("add-button");
 let taskList = [];
 
 let allTask = document.querySelector(".all");
+let doTask = document.querySelector(".do");
 
 const addTask = () => {
   let taskContent = taskInput.value;
@@ -40,6 +41,7 @@ const render = () => {
   }
   document.getElementById("task-board").innerHTML = resultHtml;
   allTask.textContent = `${taskList.length}`;
+  doTask.textContent = `${taskList.length}`;
 }
 
 // + 버튼 클릭 시 할 일 추가
