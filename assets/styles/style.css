@@ -1,0 +1,118 @@
+body {
+  background-image: url('/assets/images/background.jpg') ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  padding: 30px;
+  width: 50%;
+  background-color: #ffffff;
+  min-height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.container h1 {
+  padding: 20px;
+  font-weight: 700;
+}
+
+.input-area {
+  margin-bottom: 20px;
+}
+
+#task-input {
+  margin-right: 10px;
+  padding: 0 20px;
+  width: 80%;
+  height: 40px;
+  border: 1px solid rgb(249, 171, 221);
+  border-radius: 20px;
+}
+
+#task-input:focus {
+  outline: none;
+}
+
+input:-webkit-autofill { 
+  -webkit-box-shadow: 0 0 0 30px #fff inset; 
+  -webkit-text-fill-color: #000; 
+}
+
+input:-webkit-autofill, 
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active { 
+  transition: background-color 5000s ease-in-out 0s; 
+}
+
+#add-button {
+  width: 35px;
+  height: 35px;
+  background-color: #ffbbf5;
+  border-radius: 15px;
+}
+
+.task-taps {
+  position: relative;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.task-taps div {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c6c6c6;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.task-taps div.category-active {
+  color: #ff9bf0;
+}
+
+.task-taps div span {
+  text-align: center;
+  margin-left: 5px;
+  background-color: #c6c6c6;
+  width: 40px;
+  height: 20px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 11px;
+}
+
+.task-taps div span.active {
+  background-color: #ff83ec;
+}
+
+#under-line {
+  position: absolute;
+  left: 0px;
+  top: 52px;
+  width: 90px;
+  height: 4px;
+  background-color: #ff9bf0;
+  padding: 0;
+}
+
+.task {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ffe7ff;
+  border-radius: 20px;
+}
+
+.task div button { 
+background-color: transparent;
+}
+
+
+
+.check {
+  margin-right: 10px;
+}

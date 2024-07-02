@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+  font-family: "GmarketSans", "gothic", "Malgun Gothic", "맑은 고딕", Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", "애플 SD 산돌고딕 Neo", sans-serif !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+button {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+ul,
+ol,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
