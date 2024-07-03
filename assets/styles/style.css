@@ -5,8 +5,10 @@ body {
 }
 
 .container {
+  margin: 0 auto;
   padding: 30px;
-  width: 50%;
+  width: 80%;
+  max-width: 830px;
   background-color: #ffffff;
   min-height: 100vh;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -28,6 +30,7 @@ body {
   height: 40px;
   border: 1px solid rgb(249, 171, 221);
   border-radius: 20px;
+  font-size: 14px;
 }
 
 #task-input:focus {
@@ -37,6 +40,7 @@ body {
 input:-webkit-autofill { 
   -webkit-box-shadow: 0 0 0 30px #fff inset; 
   -webkit-text-fill-color: #000; 
+  font-size: 14px;
 }
 
 input:-webkit-autofill, 
@@ -67,6 +71,7 @@ input:-webkit-autofill:active {
   color: #c6c6c6;
   font-weight: 500;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .task-taps div.category-active {
@@ -99,10 +104,11 @@ input:-webkit-autofill:active {
 }
 
 .task {
+  width: 100%;
   margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 20px 30px;
   background-color: #ffe7ff;
   border-radius: 20px;
 }
@@ -111,8 +117,106 @@ input:-webkit-autofill:active {
 background-color: transparent;
 }
 
+.button-wrap{
+  display: flex;
+}
+
+.task div button.check {
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task div button.check-done {
+  background-color: #ff9bf0;
+  border: none;
+  color: #fff;
+}
+
+.task div button.delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-done {
+  text-decoration: line-through;
+}
+
+.done-color {
+  background-color:#e1e1e1;
+}
 
 
-.check {
-  margin-right: 10px;
+
+/* 반응형 */
+/* 460px 이하일 경우 */
+@media (max-width: 460px) {
+  .container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .container h1 {
+    font-size: 20px;
+  }
+
+  #task-input {
+    width: 70%;
+  }
+
+  #add-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .task-taps div {
+    padding: 1em;
+    font-size: 12px;
+  }
+
+  .task-taps div span {
+    width: 30px;
+    height: 15px;
+    font-size: 10px;
+  }
+
+  #under-line {
+    top: 35px;
+    width: 70px;
+  }
+
+  .task {
+    font-size: 10px;
+  }
+}
+
+
+/* 600px 이하일 경우 */
+@media (max-width: 600px) {
+  .task-taps div {
+    padding: 1em;
+    font-size: 10px;
+  }
+
+  .task-taps div span {
+    width: 30px;
+    height: 15px;
+    font-size: 10px;
+  }
+
+  #under-line {
+    top: 35px;
+    width: 70px;
+  }
+
+  .task {
+    font-size: 12px;
+  }
 }
