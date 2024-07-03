@@ -66,41 +66,45 @@ const render = () => {
   doneTask.textContent = `${taskList.filter(task => task.isComplete && !task.isDelete).length}`;
   deletedTask.textContent = `${taskList.filter(task => task.isDelete).length}`;
 
+
   let resultHtml = "";
+  let incompleteTasks = [];
+  let completeTasks = [];
+
   for (let i = 0; i < list.length; i++) {
-    // 삭제되지 않은 할 일
     if (list[i].isDelete === false) {
       if (list[i].isComplete == true) {
-        resultHtml += `
-          <div class="task done-color">
-            <div class="task-done">${list[i].taskContent}</div>
-            <div class="button-wrap">
-              <button class="check check-done" onclick="toggleComplete('${list[i].id}')"><i class="fa-solid fa-rotate-left"></i></button>
-              <button class="delete" onclick="taskDelete('${list[i].id}')"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-          </div>`;
+        completeTasks.push(list[i]);
       } else {
-        resultHtml += `
-          <div class="task">
-            <div>${list[i].taskContent}</div>
-            <div class="button-wrap">
-              <button class="check" onclick="toggleComplete('${list[i].id}')"><i class="fa-solid fa-check"></i></button>
-              <button class="delete" onclick="taskDelete('${list[i].id}')"><i class="fa-solid fa-trash-can"></i></button>
-            </div>
-          </div>`;
+        incompleteTasks.push(list[i]);
       }
-    } else {
-      // 삭제된 할 일
-      resultHtml += `
-      <div class="task task-delete">
-        <div>${list[i].taskContent}</div>
-        <div class="button-wrap">
-          <button class="check check-done" onclick="taskBack('${list[i].id}')"><i class="fa-solid fa-rotate-left"></i></button>
-          <button class="delete" onclick="taskCompleteDelete('${list[i].id}')"><i class="fa-solid fa-trash-can"></i></button>
-        </div>
-      </div>`;
     }
   }
+
+  // 완료되지 않은 할 일 먼저 추가
+  for (let i = 0; i < incompleteTasks.length; i++) {
+    resultHtml += `
+      <div class="task">
+        <div>${incompleteTasks[i].taskContent}</div>
+        <div class="button-wrap">
+          <button class="check" onclick="toggleComplete('${incompleteTasks[i].id}')"><i class="fa-solid fa-check"></i></button>
+          <button class="delete" onclick="taskDelete('${incompleteTasks[i].id}')"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+      </div>`;
+  }
+
+  // 완료된 할 일 추가
+  for (let i = 0; i < completeTasks.length; i++) {
+    resultHtml += `
+      <div class="task done-color move-down">
+        <div class="task-done">${completeTasks[i].taskContent}</div>
+        <div class="button-wrap">
+          <button class="check check-done" onclick="toggleComplete('${completeTasks[i].id}')"><i class="fa-solid fa-rotate-left"></i></button>
+          <button class="delete" onclick="taskDelete('${completeTasks[i].id}')"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+      </div>`;
+  }
+
   document.getElementById("task-board").innerHTML = resultHtml;  // 할 일 목록을 화면에 렌더링
 }
 
