@@ -218,7 +218,6 @@ const underLineMove = (e) => {
 
   underLine.style.left = target.offsetLeft + "px";
   underLine.style.width = target.offsetWidth + "px";
-  underLine.style.transition = "0.5s";
 }
 
 // 탭 클릭 시 탭 변경 함수
@@ -255,7 +254,7 @@ taskInput.addEventListener("keyup", (e) => {
 });
 
 // 탭 클릭 시 언더라인 이동 및 탭 변경
-for (let i = 0; i < tabs.length; i++) {
+for (let i = 1; i < tabs.length; i++) {
   tabs[i].addEventListener("click", (e) => {
     filterTask(e);
     underLineMove(e);
